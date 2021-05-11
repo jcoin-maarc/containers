@@ -4,6 +4,8 @@ USER $NB_USER
 WORKDIR /home/$NB_USER
 ARG COVID_TOOLS_BRANCH=master
 
+RUN mkdir /home/$NB_USER/pd
+
 # copy welcome splash page
 ADD --chown=jovyan:users https://raw.githubusercontent.com/uc-cdis/covid19-tools/$COVID_TOOLS_BRANCH/covid19-notebooks/welcome.html /home/$NB_USER/
 RUN touch /home/$NB_USER/welcome.html
